@@ -52,7 +52,7 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         supplierName3 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        supplierName4 = new javax.swing.JTextField();
+        itemNameTxtField = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         supplierName5 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -146,12 +146,12 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
         jLabel9.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel9.setText("Invoice Number");
 
-        supplierName4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        supplierName4.setAutoscrolls(false);
-        supplierName4.setCaretColor(new java.awt.Color(153, 153, 255));
-        supplierName4.addKeyListener(new java.awt.event.KeyAdapter() {
+        itemNameTxtField.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        itemNameTxtField.setAutoscrolls(false);
+        itemNameTxtField.setCaretColor(new java.awt.Color(153, 153, 255));
+        itemNameTxtField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                supplierName4KeyReleased(evt);
+                itemNameTxtFieldKeyReleased(evt);
             }
         });
 
@@ -309,7 +309,7 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
                             .addComponent(jLabel6)
                             .addComponent(supplierName, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
-                            .addComponent(supplierName4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(itemNameTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13)
                             .addComponent(gstTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16)
@@ -364,7 +364,7 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
                     .addGroup(stockMaster_formLayout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(supplierName4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(itemNameTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(stockMaster_formLayout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -449,9 +449,9 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_supplierName3KeyReleased
 
-    private void supplierName4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supplierName4KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_supplierName4KeyReleased
+    private void itemNameTxtFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_itemNameTxtFieldKeyReleased
+        itemNameTxtField.setText(itemNameTxtField.getText().toUpperCase());
+    }//GEN-LAST:event_itemNameTxtFieldKeyReleased
 
     private void supplierName5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supplierName5KeyReleased
         // TODO add your handling code here:
@@ -518,6 +518,7 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
     private javax.swing.JTextField chkDateTxtField;
     private javax.swing.JTextField chkNumberTxtField;
     private javax.swing.JTextField gstTxtField;
+    private javax.swing.JTextField itemNameTxtField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -542,7 +543,6 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
     private javax.swing.JTextField supplierName11;
     private javax.swing.JTextField supplierName2;
     private javax.swing.JTextField supplierName3;
-    private javax.swing.JTextField supplierName4;
     private javax.swing.JTextField supplierName5;
     private javax.swing.JTextField supplierName6;
     private javax.swing.JTextField supplierName8;
