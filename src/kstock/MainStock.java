@@ -438,6 +438,11 @@ public class MainStock extends javax.swing.JFrame {
        cmgSoonSelect.setBackground(defaultClor);
        Work_Panel.removeAll();
        Work_Panel.repaint();
+       AddStockMaster master = new AddStockMaster();
+       master.setBorder(null);
+       BasicInternalFrameUI bi = (BasicInternalFrameUI)master.getUI();
+       bi.setNorthPane(null);
+       Work_Panel.add(master).setVisible(true);
     }//GEN-LAST:event_MenuAddStockjPanelMouseClicked
 
     private void itemSelectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemSelectMouseClicked

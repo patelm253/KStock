@@ -187,7 +187,7 @@ public class Login extends javax.swing.JFrame {
        if(userName.equalsIgnoreCase("ADMIN") && password.equalsIgnoreCase("ADMIN")){
            new Login().setVisible(false);
            MainStock frame = new MainStock();
-           //frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+           frame.setExtendedState(MainStock.MAXIMIZED_BOTH); 
            frame.setVisible(true);
        }else{
             JOptionPane.showMessageDialog(null, "Invalid Username or Password!", "Error", JOptionPane.ERROR_MESSAGE);

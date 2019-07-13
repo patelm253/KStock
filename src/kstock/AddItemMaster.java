@@ -50,7 +50,7 @@ public class AddItemMaster extends javax.swing.JInternalFrame {
         setBorder(null);
         setDoubleBuffered(true);
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(102, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 3, 24)); // NOI18N
         jLabel5.setText("Item Master");

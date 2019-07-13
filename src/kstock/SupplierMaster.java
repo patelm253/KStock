@@ -55,7 +55,7 @@ public class SupplierMaster extends javax.swing.JInternalFrame {
         jLabel6.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel6.setText("Supplier Name");
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(102, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 3, 24)); // NOI18N
         jLabel5.setText("Supplier Master");
