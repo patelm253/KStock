@@ -17,10 +17,10 @@ public class KStock {
     public static void main(String[] args) {
          java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //MainStock frame= new MainStock();           
-                //frame.setExtendedState(MainStock.MAXIMIZED_BOTH);
-                //frame.setVisible(true);
-                new Login().setVisible(true);
+                MainStock frame= new MainStock();           
+                frame.setExtendedState(MainStock.MAXIMIZED_BOTH);
+                frame.setVisible(true);
+                //new Login().setVisible(true);
             }
         });
         

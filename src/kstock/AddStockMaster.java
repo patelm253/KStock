@@ -5,6 +5,8 @@
  */
 package kstock;
 
+import javax.swing.ButtonGroup;
+
 /**
  *
  * @author Mayur
@@ -16,8 +18,19 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
      */
     public AddStockMaster() {
         initComponents();
+        initialSetup();
     }
-
+    private String radioGroup ="Seva";
+    
+    private void initialSetup(){
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(sevaRadio);
+        bg.add(byPaymentRadio);
+        sevaRadio.setSelected(true);
+        this.gstTxtField.setEditable(false);
+        this.chkDateTxtField.setEditable(false);
+        this.chkNumberTxtField.setEditable(false);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,18 +58,21 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
         jLabel11 = new javax.swing.JLabel();
         supplierName6 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        supplierName7 = new javax.swing.JTextField();
+        gstTxtField = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         supplierName8 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        supplierName9 = new javax.swing.JTextField();
+        chkNumberTxtField = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        supplierName10 = new javax.swing.JTextField();
+        chkDateTxtField = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         supplierName11 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         addsupplierbtn = new javax.swing.JButton();
         resetSupplierbtn = new javax.swing.JButton();
+        sevaRadio = new javax.swing.JRadioButton();
+        byPaymentRadio = new javax.swing.JRadioButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setBorder(null);
 
@@ -166,12 +182,12 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
         jLabel12.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel12.setText("Unit Price");
 
-        supplierName7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        supplierName7.setAutoscrolls(false);
-        supplierName7.setCaretColor(new java.awt.Color(153, 153, 255));
-        supplierName7.addKeyListener(new java.awt.event.KeyAdapter() {
+        gstTxtField.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        gstTxtField.setAutoscrolls(false);
+        gstTxtField.setCaretColor(new java.awt.Color(153, 153, 255));
+        gstTxtField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                supplierName7KeyReleased(evt);
+                gstTxtFieldKeyReleased(evt);
             }
         });
 
@@ -190,24 +206,24 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
         jLabel14.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel14.setText("Bill Amount");
 
-        supplierName9.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        supplierName9.setAutoscrolls(false);
-        supplierName9.setCaretColor(new java.awt.Color(153, 153, 255));
-        supplierName9.addKeyListener(new java.awt.event.KeyAdapter() {
+        chkNumberTxtField.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        chkNumberTxtField.setAutoscrolls(false);
+        chkNumberTxtField.setCaretColor(new java.awt.Color(153, 153, 255));
+        chkNumberTxtField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                supplierName9KeyReleased(evt);
+                chkNumberTxtFieldKeyReleased(evt);
             }
         });
 
         jLabel15.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
         jLabel15.setText("Cheque Number");
 
-        supplierName10.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        supplierName10.setAutoscrolls(false);
-        supplierName10.setCaretColor(new java.awt.Color(153, 153, 255));
-        supplierName10.addKeyListener(new java.awt.event.KeyAdapter() {
+        chkDateTxtField.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        chkDateTxtField.setAutoscrolls(false);
+        chkDateTxtField.setCaretColor(new java.awt.Color(153, 153, 255));
+        chkDateTxtField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                supplierName10KeyReleased(evt);
+                chkDateTxtFieldKeyReleased(evt);
             }
         });
 
@@ -246,17 +262,33 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
             }
         });
 
+        sevaRadio.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
+        sevaRadio.setText("Seva");
+        sevaRadio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sevaRadioMouseClicked(evt);
+            }
+        });
+        sevaRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sevaRadioActionPerformed(evt);
+            }
+        });
+
+        byPaymentRadio.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
+        byPaymentRadio.setText("By Payment");
+        byPaymentRadio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                byPaymentRadioMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout stockMaster_formLayout = new javax.swing.GroupLayout(stockMaster_form);
         stockMaster_form.setLayout(stockMaster_formLayout);
         stockMaster_formLayout.setHorizontalGroup(
             stockMaster_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, stockMaster_formLayout.createSequentialGroup()
                 .addGroup(stockMaster_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(stockMaster_formLayout.createSequentialGroup()
-                        .addContainerGap(616, Short.MAX_VALUE)
-                        .addComponent(addsupplierbtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(resetSupplierbtn))
                     .addGroup(stockMaster_formLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(stockMaster_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,7 +299,11 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
                             .addComponent(jLabel12)
                             .addComponent(supplierName6, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15)
-                            .addComponent(supplierName9, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(chkNumberTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(stockMaster_formLayout.createSequentialGroup()
+                                .addComponent(sevaRadio)
+                                .addGap(18, 18, 18)
+                                .addComponent(byPaymentRadio)))
                         .addGap(44, 44, 44)
                         .addGroup(stockMaster_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -275,10 +311,10 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
                             .addComponent(jLabel10)
                             .addComponent(supplierName4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13)
-                            .addComponent(supplierName7, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gstTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16)
-                            .addComponent(supplierName10, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chkDateTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                         .addGroup(stockMaster_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(supplierName2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -287,13 +323,25 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
                             .addComponent(jLabel14)
                             .addComponent(supplierName8, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17)
-                            .addComponent(supplierName11, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(113, 113, 113))
+                            .addComponent(supplierName11, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(stockMaster_formLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(addsupplierbtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(resetSupplierbtn)))
+                .addGap(110, 110, 110))
+            .addComponent(jSeparator1)
         );
         stockMaster_formLayout.setVerticalGroup(
             stockMaster_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(stockMaster_formLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addContainerGap()
+                .addGroup(stockMaster_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sevaRadio)
+                    .addComponent(byPaymentRadio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(stockMaster_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(stockMaster_formLayout.createSequentialGroup()
                         .addComponent(jLabel7)
@@ -330,7 +378,7 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
                     .addGroup(stockMaster_formLayout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(supplierName7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(gstTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(stockMaster_formLayout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -340,11 +388,11 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
                     .addGroup(stockMaster_formLayout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(supplierName9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(chkNumberTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(stockMaster_formLayout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(supplierName10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(chkDateTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(stockMaster_formLayout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -353,7 +401,7 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
                 .addGroup(stockMaster_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addsupplierbtn)
                     .addComponent(resetSupplierbtn))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -413,21 +461,21 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_supplierName6KeyReleased
 
-    private void supplierName7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supplierName7KeyReleased
+    private void gstTxtFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gstTxtFieldKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_supplierName7KeyReleased
+    }//GEN-LAST:event_gstTxtFieldKeyReleased
 
     private void supplierName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supplierName8KeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_supplierName8KeyReleased
 
-    private void supplierName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supplierName9KeyReleased
+    private void chkNumberTxtFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_chkNumberTxtFieldKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_supplierName9KeyReleased
+    }//GEN-LAST:event_chkNumberTxtFieldKeyReleased
 
-    private void supplierName10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supplierName10KeyReleased
+    private void chkDateTxtFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_chkDateTxtFieldKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_supplierName10KeyReleased
+    }//GEN-LAST:event_chkDateTxtFieldKeyReleased
 
     private void supplierName11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supplierName11KeyReleased
         // TODO add your handling code here:
@@ -445,9 +493,31 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
         //refPersonName.setText("");
     }//GEN-LAST:event_resetSupplierbtnMousePressed
 
+    private void sevaRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevaRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sevaRadioActionPerformed
+
+    private void byPaymentRadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_byPaymentRadioMouseClicked
+        this.radioGroup = "Payment";
+        this.gstTxtField.setEditable(true);
+        this.chkDateTxtField.setEditable(true);
+        this.chkNumberTxtField.setEditable(true);
+    }//GEN-LAST:event_byPaymentRadioMouseClicked
+
+    private void sevaRadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sevaRadioMouseClicked
+        this.radioGroup = "Seva";
+        this.gstTxtField.setEditable(false);
+        this.chkDateTxtField.setEditable(false);
+        this.chkNumberTxtField.setEditable(false);
+    }//GEN-LAST:event_sevaRadioMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addsupplierbtn;
+    private javax.swing.JRadioButton byPaymentRadio;
+    private javax.swing.JTextField chkDateTxtField;
+    private javax.swing.JTextField chkNumberTxtField;
+    private javax.swing.JTextField gstTxtField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -463,19 +533,18 @@ public class AddStockMaster extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton resetSupplierbtn;
+    private javax.swing.JRadioButton sevaRadio;
     private javax.swing.JPanel stockMaster_form;
     private javax.swing.JTextField supplierName;
     private javax.swing.JTextField supplierName1;
-    private javax.swing.JTextField supplierName10;
     private javax.swing.JTextField supplierName11;
     private javax.swing.JTextField supplierName2;
     private javax.swing.JTextField supplierName3;
     private javax.swing.JTextField supplierName4;
     private javax.swing.JTextField supplierName5;
     private javax.swing.JTextField supplierName6;
-    private javax.swing.JTextField supplierName7;
     private javax.swing.JTextField supplierName8;
-    private javax.swing.JTextField supplierName9;
     // End of variables declaration//GEN-END:variables
 }
